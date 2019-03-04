@@ -13,16 +13,16 @@ const FOO;
 ```
 
 `"use strict";` which means using strict mode. If you use this mode, you can use more polite syntax. Therefore browser accurate check the error.
-i```JavaScript
+
+```JavaScript
 "use strict";
 x = 3.14; // throws an error because x is not declared
 ```
 
 ## Arrow function
 
-JavaScript has few things to define function.
+JavaScript has few things to define function. Subsitution variable. You can const instead of let or var.
 
-Subsitution variable. You can const instead of let or var.
 ```JavaScript
 const myFunc = function() {
     const myVar = "value";
@@ -82,7 +82,7 @@ console.log(map1);
 ### filter
 You can get a data which matchs condition. And second argument and therd argument are optional.
 
-```
+```JavaScript
 var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
 const result = words.filter(word => word.length > 6);
@@ -302,7 +302,7 @@ const zeus = new SpaceShuttle('Jupiter');
 
 ### Getter and Setter
 ES6 can use capsulation. If you wanna use getter and setter, you can use `set` and `get` keyword before method name.
-```
+```JavaScript
 class Person {
     constructor(name) {
         this._name = name;
@@ -361,6 +361,6 @@ export { capitalizeString, foo }
 ```
 
 In addtion, if you wanna use the all modules. Using the `import * as` syntax.
-```
+```JavaScript
 import * as Module from './module.js';
 ```
