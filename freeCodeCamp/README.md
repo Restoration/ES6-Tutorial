@@ -117,3 +117,49 @@ console.log(total);
 // expected output: 6
 ```
 
+## Parameters
+ES6 can use few things which is how to use parameters. 
+
+### Default Parameter
+First thing, ES6 can set default parameters for function.
+```JavaScript
+function greeting(name = "Anonymous") {
+  return "Hello " + name;
+}
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous
+```
+If you wanna set default parameter, define insede the parenthesis.
+
+### Rest Operator
+Then, ES6 can use the Rest Operator which can get obtain unspecified number of arguments.
+```JavaScript
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+
+console.log(howMany(0, 1)); // You have passed 2 arguments
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
+```
+
+### Spread Operator
+A Spread Operator to Evaluate Arrays In-Place
+The ES5 code bellow uses `apply()`.
+
+- [apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+
+```JavaScript
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); // returns 89
+```
+
+Then, From ES6 you can use spread operator which means same apply function.
+
+```JavaScript
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
+
+
