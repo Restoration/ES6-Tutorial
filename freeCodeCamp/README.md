@@ -237,3 +237,53 @@ const profileUpdate = (profileData) => {
   // do something with these variables
 }
 ```
+
+
+## Template Literals
+ES6 has new string literals. Wrapping backquote and using dollar mark and curly bracket.
+
+```JavaScript
+var name = "RyotArch";
+var newString = `Hello my name is ${name}`;
+document.write(newString);
+```
+
+```JavaScript
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+```
+
+
+Concise Object Literal Declarations.
+
+```JavaScript
+const getMousePosition = (x, y) => ({
+    x: x,
+    y: y
+});
+
+const getMousePosition = (x, y) => ({ x, y });
+```
+
+Write Concise Declarative Functions with ES6
+```JavaScript
+const person = {
+  name: "RyotArch",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+console.log(person.sayHello());
+```
+
+
