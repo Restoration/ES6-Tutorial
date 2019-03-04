@@ -325,4 +325,42 @@ console.log(person.name);  // RYOTARCH
 person.sayHello(); // Hello, my name is RyotArch.
 ```
 
+## import and export
 
+If you use a Node.js, you should use `require()`, but you use the ES6 code on browser.
+You should `import`.
+The import is you can require module code on another file. Also if you wanna import file, you have to export on imported file. In you use export, you have to `export default` keyword.
+
+For example
+
+module.js
+```JavaScript
+export default class Module(){
+    sayHello(){
+        console.loog("Hello");
+    }
+}
+```
+
+index.js
+```JavaScript
+import {sayHello} from './module.js';
+
+sayHello();
+```
+
+If you use default, you don't need `as` keyword and mehotd name.
+
+Same thing, you can use function or variable.
+```JavaScript
+const capitalizeString = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+const foo = "bar";
+export { capitalizeString, foo }
+```
+
+In addtion, if you wanna use the all modules. Using the `import * as` syntax.
+```
+import * as Module from './module.js';
+```
