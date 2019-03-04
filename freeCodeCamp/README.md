@@ -58,4 +58,62 @@ const myFunc = (myVar) => {
 const doubler = (item) => item * 2;
 ```
 
+## Higher Order Arrow Functions
+Arrow functions work really well with higher order functions, such as `map()`, `filter()`, and `reduce()`, that take other functions as arguments for processing collections of data.
+
+These functions can loop process.
+- [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+
+### map
+You can create new array with map. And second argument and therd argument are optional.
+
+```JavaScript
+var array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+```
+
+### filter
+You can get a data which matchs condition. And second argument and therd argument are optional.
+
+```
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+```
+
+
+### reduce
+Get the value after process.
+In this case, accumulator value means, it likes totaly result to previous.
+```JavaScript
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+```
+
+Another way.
+```JavaScript
+const total = [0, 1, 2, 3].reduce(function(previousValue, currentValue, index, array) {
+    return previousValue + currentValue;
+});
+console.log(total);
+// expected output: 6
+```
 
