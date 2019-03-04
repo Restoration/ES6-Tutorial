@@ -286,4 +286,43 @@ const person = {
 console.log(person.sayHello());
 ```
 
+## Class
+You can use class from ES6.
+
+### Constructor
+The bellow code is class Syntax to Define a Constructor Function.
+```JavaScript
+class SpaceShuttle {
+  constructor(targetPlanet){
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+```
+
+### Getter and Setter
+ES6 can use capsulation. If you wanna use getter and setter, you can use `set` and `get` keyword before method name.
+```
+class Person {
+    constructor(name) {
+        this._name = name;
+    }
+
+    get name() {
+        return this._name.toUpperCase();
+    }
+
+    set name(newName) {
+        this._name = newName;   // validation could be checked here such as only allowing non numerical values
+    }
+
+    sayHello() {
+        console.log('Hello, my name is ' + this._name + '.');
+    }
+}
+const person = new Person('RyotArch');
+console.log(person.name);  // RYOTARCH
+person.sayHello(); // Hello, my name is RyotArch.
+```
+
 
