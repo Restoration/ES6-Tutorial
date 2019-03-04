@@ -161,5 +161,79 @@ const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 ```
 
+## Data Structure
+The ES6 has few new syntax.
 
 
+### Object
+Assignment to assign variables from objects
+
+ES5
+```JavaScript
+var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+```
+
+
+ES6
+```JavaScript
+var voxel = {
+    x: 3.6,
+    y: 7.4,
+    z: 6.54
+};
+const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
+```
+
+Another way, you can assign another name variables.
+```JavaScript
+var voxel = {
+    x: 3.6,
+    y: 7.4,
+    z: 6.54
+};
+const { x : a, y : b, z : c } = voxel; // a = 3.6, b = 7.4, c = 6.54
+```
+
+As well, you can assign nested objects.
+```JavaScript
+const a = {
+    start: { x: 5, y: 6},
+    end: { x: 6, y: -9 }
+};
+const { start : { x: startX, y: startY }} = a;
+console.log(startX, startY); // 5, 6
+```
+
+
+### Array
+The how to assign array is same syntax.
+```JavaScript
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+```
+
+You can chose the value.
+```JavaScript
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+```
+
+Assignment with the Rest Operator to reassign array.  
+You can use the Rest Operator in array when you ressign the variable.
+```JavaScript
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+```
+
+
+Also if you use the function, you can use ressign inside function, too.
+```JavaScript
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+  // do something with these variables
+}
+```
